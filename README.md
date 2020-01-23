@@ -6,11 +6,11 @@ When completing this coding challenge, please organize your code as if it were g
 ### Functional Spec
 ----------------------------
 
-Create a simple mobile app using React Native that allows a user to **browse blockchain block & transaction data** from the Blockchain.org public API. The user should be able to:
+Create a simple mobile app using React Native that allows a user to **browse Planets and People ** from the SWAPI public API. The user should be able to:
 
-- View a single block
-- View a single transaction on a block
-- View the latest block
+- View a list of planets (http swapi.co/api/planets/)
+- View a single planet details from the list (http swapi.co/api/planets/)
+- View the list of people living in each planet (https://swapi.co/api/people/)
 
 #### UI/UX Design
 ------------------------
@@ -20,29 +20,36 @@ The UI/UX is completely up to you. Be as creative as you want while considering 
 ### Technical Spec
 ---------------------------
 
-The architecture for this service will feature only the mobile app front end. Instructions on how to access the Blockchain.org REST API for obtaining data can be found below under the Back-end heading.
+The architecture for this service will feature only the mobile app front end. Instructions on how to access the SWAPI REST API for obtaining data can be found below under the Back-end heading.
 
 
 #### App
 
-The mobile app should ideally be a Main Screen with navigation to respective block transactions Screen. Take this opportunity to demonstrate your React Native knowledge. App should work in both Android and iOS.
+The mobile app should ideally be a Main Screen with list of planets and navigation to respective Planet Details Screen with details of people living in it. Take this opportunity to demonstrate your React Native knowledge. App should work in both Android and iOS.
 
 
 #### Back-end
 
-The Blockchain.org REST API is open to developers and accessible without registering for an account. You can read the API documentation here: https://blockchain.info/api/blockchain_api.
+The SWAPI REST API is open to developers and accessible without registering for an account. You can read the API documentation here: https://swapi.co/documentation.
 
-For example: Retrieving data on the latest block can be achieved by hitting the following endpoint: ```https://blockchain.info/latestblock```
+For example: Retrieving data for the planet 1 can be achieved by hitting the following endpoint: ```https://swapi.co/api/planets/1/```
 This will return a result similar to the example below:
 
 ```
 {
-    "hash":"0000000000000538200a48202ca6340e983646ca088c7618ae82d68e0c76ef5a",
-    "time":1325794737,
-    "block_index":841841,
-    "height":160778,
-    "txIndexes":[13950369,13950510,13951472]
- }
+    "name": "Tatooine", 
+    "rotation_period": "23", 
+    "orbital_period": "304", 
+    "diameter": "10465", 
+    "climate": "arid", 
+    "gravity": "1 standard", 
+    "terrain": "desert", 
+    "surface_water": "1", 
+    "population": "200000", 
+    "residents": [ ...
+    ...
+    "url": "https://swapi.co/api/planets/1/"
+}
 ```
 
 #### Hosting
